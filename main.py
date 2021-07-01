@@ -9,7 +9,7 @@ from tensorflow.keras import optimizers
 
 
 def main():
-    DATA_DIR = "../data"
+    DATA_DIR = "data"
     IMG_SIZE = 100
     CATEGORIES = ["with_mask", "without_mask"]
     data = []
