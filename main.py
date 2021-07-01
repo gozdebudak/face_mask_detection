@@ -71,7 +71,7 @@ def cnn(X, y, IMG_SIZE, num):
 
     cnn_model.compile(loss='categorical_crossentropy', optimizer=adam, metrics=['accuracy'])
 
-    cnn_model.fit(X, y, epochs=15, batch_size=50, validation_split=0.3)
+    cnn_model.fit(X, y, epochs=15, validation_split=0.3)
     # score = cnn_model.evaluate(X, y, verbose=0)
     # print('Test loss:', '{:.4f}'.format(score[0]))
     # print('Test accuracy:', '{:.4f}'.format(score[1]))
