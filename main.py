@@ -39,7 +39,7 @@ def creating_data(DATADIR, CATEGORIES, data, IMG_SIZE):
                pass  # Passing
 
 
-def cnn(X, y, IMG_SIZE, num):
+def cnn(X, y, IMG_SIZE):
     # print(len(X))
     X = np.array(X).reshape(-1, IMG_SIZE, IMG_SIZE, 3)
     # print(X.shape)
