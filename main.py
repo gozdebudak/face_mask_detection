@@ -23,9 +23,7 @@ def main():
         X.append(features)
         y.append(label)
 
-    cnn(X, y, IMG_SIZE, len(CATEGORIES))
-    #classify_with_dt(X, y, IMG_SIZE)
-    #classify_with_knn(X, y, IMG_SIZE, len(CATEGORIES))
+    cnn(X, y, IMG_SIZE)
 
 
 def creating_data(DATADIR, CATEGORIES, data, IMG_SIZE):
@@ -72,14 +70,8 @@ def cnn(X, y, IMG_SIZE, num):
     # adadelta = optimizers.Adadelta()
 
     cnn_model.compile(loss='categorical_crossentropy', optimizer=adam, metrics=['accuracy'])
-    print("CNN Classification: ")
 
-    if num == 3:
-        batch = 100
-    else:
-        batch = 10
-
-    cnn_model.fit(X, y, epochs=15, batch_size=batch, validation_split=0.3)
+    cnn_model.fit(X, y, epochs=15, batch_size=100, validation_split=0.3)
     # score = cnn_model.evaluate(X, y, verbose=0)
     # print('Test loss:', '{:.4f}'.format(score[0]))
     # print('Test accuracy:', '{:.4f}'.format(score[1]))
