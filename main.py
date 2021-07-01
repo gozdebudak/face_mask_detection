@@ -23,7 +23,7 @@ def main():
         X.append(features)
         y.append(label)
 
-    cnn(X, y, IMG_SIZE)
+    cnn(X, y, IMG_SIZE, len(CATEGORIES))
 
 
 def creating_data(DATADIR, CATEGORIES, data, IMG_SIZE):
@@ -39,7 +39,7 @@ def creating_data(DATADIR, CATEGORIES, data, IMG_SIZE):
                pass  # Passing
 
 
-def cnn(X, y, IMG_SIZE):
+def cnn(X, y, IMG_SIZE, num):
     # print(len(X))
     X = np.array(X).reshape(-1, IMG_SIZE, IMG_SIZE, 3)
     # print(X.shape)
